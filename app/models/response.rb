@@ -27,6 +27,6 @@ class Response < ActiveRecord::Base
   validates :answer_choice_id, :user_id, presence: true
 
   def sibling_responses
-    question.responses
+    question.responses.where.not(id: id)
   end
 end
