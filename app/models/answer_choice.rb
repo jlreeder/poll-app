@@ -19,4 +19,6 @@ class AnswerChoice < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :answer_choice_id,
     class_name: :Response
+
+  validates :choice_body, :question_id, presence: true
 end

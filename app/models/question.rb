@@ -19,4 +19,6 @@ class Question < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :question_id,
     class_name: :AnswerChoice
+
+  validates :body, :poll_id, presence: true
 end

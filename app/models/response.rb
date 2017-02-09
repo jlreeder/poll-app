@@ -19,4 +19,6 @@ class Response < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
+
+    validates :answer_choice_id, :user_id, presence: true
 end

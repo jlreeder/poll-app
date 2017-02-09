@@ -20,5 +20,5 @@ class Poll < ActiveRecord::Base
     foreign_key: :poll_id,
     class_name: :Question
 
-  validates :title, presence: true
+  validates :title, :user_id, presence: true
 end
