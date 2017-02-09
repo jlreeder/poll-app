@@ -9,4 +9,10 @@ ActiveRecord::Base.transaction do
   Question.destroy_all
   q1 = Question.create(body: 'Red or blue?', poll_id: p1.id)
   q2 = Question.create(body: 'Green or yellow?', poll_id: p1.id)
+
+  AnswerChoice.destroy_all
+  a1 = AnswerChoice.create(choice_body: 'red', question_id: q1.id)
+  a2 = AnswerChoice.create(choice_body: 'blue', question_id: q1.id)
+  a3 = AnswerChoice.create(choice_body: 'green', question_id: q2.id)
+  a4 = AnswerChoice.create(choice_body: 'yellow', question_id: q2.id)
 end
