@@ -15,4 +15,10 @@ ActiveRecord::Base.transaction do
   a2 = AnswerChoice.create(choice_body: 'blue', question_id: q1.id)
   a3 = AnswerChoice.create(choice_body: 'green', question_id: q2.id)
   a4 = AnswerChoice.create(choice_body: 'yellow', question_id: q2.id)
+
+  Response.destroy_all
+  r1 = Response.create(answer_choice_id: a1.id, user_id: u1.id)
+  r2 = Response.create(answer_choice_id: a3.id, user_id: u1.id)
+  r3 = Response.create(answer_choice_id: a2.id, user_id: u2.id)
+  r4 = Response.create(answer_choice_id: a3.id, user_id: u2.id)
 end
