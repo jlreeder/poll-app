@@ -20,5 +20,13 @@ class Response < ActiveRecord::Base
     foreign_key: :user_id,
     class_name: :User
 
-    validates :answer_choice_id, :user_id, presence: true
+  has_one :question,
+    through: :answer_choice,
+    source: :question
+
+  validates :answer_choice_id, :user_id, presence: true
+
+  def sibling_responses
+    question.responses
+  end
 end
