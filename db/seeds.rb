@@ -21,4 +21,6 @@ ActiveRecord::Base.transaction do
   r2 = Response.create(answer_choice_id: a3.id, user_id: u1.id)
   r3 = Response.create(answer_choice_id: a2.id, user_id: u2.id)
   r4 = Response.create(answer_choice_id: a3.id, user_id: u2.id)
+
+  r5 = Response.create(answer_choice_id: a2.id, user_id: u1.id)
 end

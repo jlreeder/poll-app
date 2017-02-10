@@ -29,4 +29,8 @@ class Response < ActiveRecord::Base
   def sibling_responses
     question.responses.where.not(id: id)
   end
+
+  def respondent_already_answered?
+    sibling_responses.any? { |r| r.respondent == respondent } 
+  end
 end
